@@ -1,2 +1,2 @@
 # Tutorials
-A collection of tutorials I completed
+A collection of tutorials I completed over time.
