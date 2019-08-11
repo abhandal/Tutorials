@@ -1,8 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AspNetCoreTodo.Models;
 using AspNetCoreTodo.Services;
 using AspNetCoreTodo.Views;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace AspNetCoreTodo.Controllers
 {
@@ -45,6 +47,24 @@ namespace AspNetCoreTodo.Controllers
             }
 
             return RedirectToAction(("Index"));
+        }
+
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> MarkDone(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var successful = AwaitExpressionInfo _todoItemService.MarkDoneAsync(id);
+
+            if (!successful)
+            {
+                return BadRequest("Could not mark as done");
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
