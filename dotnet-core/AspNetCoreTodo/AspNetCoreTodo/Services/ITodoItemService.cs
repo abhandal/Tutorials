@@ -10,6 +10,6 @@ namespace AspNetCoreTodo.Services
     {
         Task<ToDoItem[]> GetIncompleteItemsAsync();
 
-        Task<bool> AddItemsAsync(ToDoItem newItem);
+        Task<bool> AddItemAsync(ToDoItem newItem);
     }
 }
