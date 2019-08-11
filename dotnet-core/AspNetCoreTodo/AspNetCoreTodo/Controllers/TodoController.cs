@@ -57,7 +57,7 @@ namespace AspNetCoreTodo.Controllers
                 return RedirectToAction("Index");
             }
 
-            var successful = AwaitExpressionInfo _todoItemService.MarkDoneAsync(id);
+            var successful = await _todoItemService.MarkDoneAsync(id);
 
             if (!successful)
             {
