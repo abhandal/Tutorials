@@ -24,7 +24,7 @@ namespace AspNetCoreTodo.Services
                 .ToArrayAsync();
         }
 
-        public async Task<bool> AddItemsAsync(ToDoItem newItem)
+        public async Task<bool> AddItemAsync(ToDoItem newItem)
         {
             newItem.ID = Guid.NewGuid();
             newItem.isDone = false;
