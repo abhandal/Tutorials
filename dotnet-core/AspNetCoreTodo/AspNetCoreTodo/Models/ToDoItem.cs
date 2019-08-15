@@ -27,5 +27,10 @@ namespace AspNetCoreTodo.Models
         ///     The '?' means property is nullable/optional
         /// </summary>
         public DateTimeOffset? DueAt { get; set; }
+
+        /// <summary>
+        ///     UserId
+        /// </summary>
+        public string UserId { get; set; }
     }
 }
