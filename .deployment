@@ -1,2 +1,2 @@
 [config]
-project = AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.csproj
+project = dotnet-core/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.csproj
